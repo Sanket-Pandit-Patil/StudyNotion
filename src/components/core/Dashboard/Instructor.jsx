@@ -21,6 +21,7 @@ export default function Instructor() {
       console.log(instructorApiData)
       if (instructorApiData.length) setInstructorData(instructorApiData)
       if (result) {
+       
         setCourses(result)
       }
       setLoading(false)
