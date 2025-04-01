@@ -21,12 +21,17 @@ database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
+const allowedOrigins = [
+	"http://localhost:3000",  // Local development
+	"https://studynotion-frontend-khaki.vercel.app", // Deployed frontend
+  ];
+  
+  app.use(
 	cors({
-		origin:"http://localhost:3000",
-		credentials:true,
+	  origin: allowedOrigins,  // Allow multiple origins
+	  credentials: true,  // Allow cookies if needed
 	})
-)
+  );
 
 app.use(
 	fileUpload({
