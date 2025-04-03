@@ -1,28 +1,5 @@
 # Node.js dependencies
 node_modules/
 
-# Package manager files
-.pnp/
-.pnp.js
-
-# Test coverage results
-coverage/
-
-# Production build files
-build/
-
-# macOS system files
-.DS_Store
-
 # Environment variables (contain secrets and API keys)
 .env
-.env.*  # Covers .env.local, .env.development, .env.production, .env.test, etc.
-
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Lock files (optional, if you don’t want to track them)
-package-lock.json
-yarn.lock
