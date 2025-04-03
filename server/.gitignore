@@ -1,5 +1,9 @@
-# Node.js dependencies
+# Ignore all node_modules folders
 node_modules/
 
-# Environment variables (contain secrets and API keys)
+# Ignore all .env files
 .env
+
+# Ignore node_modules and .env inside specific folders (if needed)
+server/node_modules/
+server/.env
