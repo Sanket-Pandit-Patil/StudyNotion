@@ -1,3 +1,40 @@
+# **StudyNotion Frontend** 🚀  
+
+📌 **Live Demo:** [StudyNotion](https://studynotion-frontend-khaki.vercel.app/)  
+
+An innovative **EdTech platform** designed to provide an engaging, accessible, and interactive learning experience. StudyNotion enables learners and educators to connect through seamless course management, intuitive UI, and robust authentication.  
+
+---
+
+## **🔹 Key Highlights**  
+
+✨ **Seamless Course Experience:** Browse, enroll, and track progress on courses.  
+🔒 **Secure Authentication:** Integrated **JWT-based authentication** for login/signup.  
+🎨 **Modern & Intuitive UI:** Powered by **React.js & Tailwind CSS** for a sleek interface.  
+🌙 **Dark Mode Support:** Personalized experience with a toggleable theme.  
+⚡ **Optimized Performance:** Ensures **fast loading speeds** with optimized React components.  
+📡 **Real-time API Communication:** Fetches live data with **REST API & Axios**.  
+🛠 **Scalable & Maintainable Codebase:** Designed for **future feature expansion**.  
+
+---
+
+## **🛠 Tech Stack Used**  
+
+| **Technology**      | **Purpose** |
+|---------------------|-------------|
+| React.js           | Frontend Framework |
+| Redux Toolkit      | State Management |
+| Tailwind CSS       | UI Design & Styling |
+| Axios              | API Integration |
+| Firebase/Auth      | Authentication |
+| Vercel             | Deployment |
+
+---
+
+
+
+
+
 # React & Tailwind CSS Starter Pack
 
 This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
@@ -6,10 +43,14 @@ This is a starter pack for creating React projects with Tailwind CSS configured.
 
 This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+## **🚀 Getting Started**  
+
+Follow these steps to **set up the project locally**:
+
+### **1️⃣ Clone the Repository**  
+```sh
+git clone https://github.com/YOUR_USERNAME/StudyNotion-Frontend.git
+cd StudyNotion-Frontend
 
 1. Install the required packages.
     ```sh
