@@ -8,13 +8,13 @@ An innovative **EdTech platform** designed to provide an engaging, accessible, a
 
 ## **🔹 Key Highlights**  
 
-✨ **Seamless Course Experience:** Browse, enroll, and track progress on courses.  
-🔒 **Secure Authentication:** Integrated **JWT-based authentication** for login/signup.  
-🎨 **Modern & Intuitive UI:** Powered by **React.js & Tailwind CSS** for a sleek interface.  
-🌙 **Dark Mode Support:** Personalized experience with a toggleable theme.  
-⚡ **Optimized Performance:** Ensures **fast loading speeds** with optimized React components.  
-📡 **Real-time API Communication:** Fetches live data with **REST API & Axios**.  
-🛠 **Scalable & Maintainable Codebase:** Designed for **future feature expansion**.  
+1. **Seamless Course Experience:** Browse, enroll, and track progress on courses.  
+2. **Secure Authentication:** Integrated **JWT-based authentication** for login/signup.  
+3. **Modern & Intuitive UI:** Powered by **React.js & Tailwind CSS** for a sleek interface.  
+4. **Dark Mode Support:** Personalized experience with a toggleable theme.  
+5. **Optimized Performance:** Ensures **fast loading speeds** with optimized React components.  
+6. **Real-time API Communication:** Fetches live data with **REST API & Axios**.  
+7. **Scalable & Maintainable Codebase:** Designed for **future feature expansion**.  
 
 ---
 
