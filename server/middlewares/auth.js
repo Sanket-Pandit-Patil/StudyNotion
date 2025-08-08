@@ -10,14 +10,14 @@ exports.auth = async (req, res, next) => {
         //extract token
         const token = req.cookies.token 
                         || req.body.token 
-                        || req.header("Authorization").replace("Bearer ", "");
+                        || (req.header("Authorization") ? req.header("Authorization").replace("Bearer ", "") : null);
         console.log("AFTER ToKEN EXTRACTION");
 
         //if token missing, then return response
         if(!token) {
             return res.status(401).json({
                 success:false,
-                message:'TOken is missing',
+                message:'Token is missing',
             });
         }
 
@@ -31,7 +31,7 @@ exports.auth = async (req, res, next) => {
             //verification - issue
             return res.status(401).json({
                 success:false,
-                message:'token is invalid',
+                message:'Token is invalid',
             });
         }
         next();
