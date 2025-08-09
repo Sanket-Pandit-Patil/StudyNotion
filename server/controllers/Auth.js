@@ -214,6 +214,36 @@ exports.sendotp = async (req, res) => {
 		const otpPayload = { email, otp };
 		const otpBody = await OTP.create(otpPayload);
 		console.log("OTP Body", otpBody);
+
+		// Send OTP via email
+		try {
+			const emailResponse = await mailSender(
+				email,
+				"StudyNotion - Email Verification OTP",
+				`<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+					<h2 style="color: #2c3e50; text-align: center; margin-bottom: 30px;">StudyNotion Email Verification</h2>
+					<div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+						<p style="font-size: 16px; color: #34495e; margin-bottom: 20px;">Hello!</p>
+						<p style="font-size: 16px; color: #34495e; margin-bottom: 20px;">Your email verification OTP for StudyNotion is:</p>
+						<div style="text-align: center; margin: 30px 0;">
+							<div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 30px; border-radius: 8px; font-size: 32px; font-weight: bold; letter-spacing: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+								${otp}
+							</div>
+						</div>
+						<p style="font-size: 14px; color: #7f8c8d; margin-bottom: 20px;">This OTP will expire in 10 minutes.</p>
+						<p style="font-size: 14px; color: #7f8c8d; margin-bottom: 0;">If you didn't request this OTP, please ignore this email.</p>
+					</div>
+					<div style="text-align: center; margin-top: 20px; color: #95a5a6; font-size: 12px;">
+						© 2024 StudyNotion. All rights reserved.
+					</div>
+				</div>`
+			);
+			console.log("OTP Email sent successfully:", emailResponse.response);
+		} catch (emailError) {
+			console.error("Error sending OTP email:", emailError);
+			// Don't fail the request if email fails, just log it
+		}
+
 		res.status(200).json({
 			success: true,
 			message: `OTP Sent Successfully`,
