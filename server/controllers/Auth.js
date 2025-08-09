@@ -217,6 +217,12 @@ exports.sendotp = async (req, res) => {
 
 		// Send OTP via email
 		try {
+			console.log("📧 Attempting to send OTP email to:", email);
+			console.log("📧 Using mail configuration:", {
+				host: process.env.MAIL_HOST,
+				user: process.env.MAIL_USER,
+				pass: process.env.MAIL_PASS ? '***' + process.env.MAIL_PASS.slice(-4) : 'NOT_SET'
+			});
 			const emailResponse = await mailSender(
 				email,
 				"StudyNotion - Email Verification OTP",
@@ -238,9 +244,23 @@ exports.sendotp = async (req, res) => {
 					</div>
 				</div>`
 			);
-			console.log("OTP Email sent successfully:", emailResponse.response);
+			if (emailResponse && emailResponse.response) {
+				console.log("✅ OTP Email sent successfully:", emailResponse.response);
+			} else {
+				console.log("⚠️ Email sent but no response received");
+			}
 		} catch (emailError) {
-			console.error("Error sending OTP email:", emailError);
+			console.error("❌ Error sending OTP email:", emailError);
+			console.error("Error code:", emailError.code);
+			console.error("Error message:", emailError.message);
+			
+			// Log specific Gmail errors
+			if (emailError.code === 'EAUTH') {
+				console.error("🔐 Gmail authentication failed! Check your app password.");
+			} else if (emailError.code === 'ECONNECTION') {
+				console.error("🌐 Gmail connection failed! Check your internet/firewall.");
+			}
+			
 			// Don't fail the request if email fails, just log it
 		}
 
