@@ -123,3 +123,4 @@ If you still have issues:
 2. Verify all environment variables are set correctly
 3. Test with a simple email first
 4. Ensure your Gmail account allows SMTP access
+

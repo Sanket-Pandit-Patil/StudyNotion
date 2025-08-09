@@ -130,37 +130,37 @@ function CourseDetails() {
     <>
       <div className={`relative w-full bg-richblack-800`}>
         {/* Hero Section */}
-        <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
-          <div className="mx-auto grid min-h-[450px] max-w-maxContentTab justify-items-center py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
-            <div className="relative block max-h-[30rem] lg:hidden">
+        <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative">
+          <div className="mx-auto grid min-h-[400px] sm:min-h-[450px] max-w-maxContentTab justify-items-center py-6 sm:py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
+            <div className="relative block max-h-[25rem] sm:max-h-[30rem] lg:hidden">
               <div className="absolute bottom-0 left-0 h-full w-full shadow-[#161D29_0px_-64px_36px_-28px_inset]"></div>
               <img
                 src={thumbnail}
                 alt="course thumbnail"
-                className="aspect-auto w-full"
+                className="aspect-auto w-full rounded-lg"
               />
             </div>
             <div
-              className={`z-30 my-5 flex flex-col justify-center gap-4 py-5 text-lg text-richblack-5`}
+              className={`z-30 my-4 sm:my-5 flex flex-col justify-center gap-3 sm:gap-4 py-4 sm:py-5 text-base sm:text-lg text-richblack-5`}
             >
               <div>
-                <p className="text-4xl font-bold text-richblack-5 sm:text-[42px]">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-richblack-5 sm:text-[42px] leading-tight">
                   {courseName}
                 </p>
               </div>
-              <p className={`text-richblack-200`}>{courseDescription}</p>
-              <div className="text-md flex flex-wrap items-center gap-2">
+              <p className={`text-richblack-200 text-sm sm:text-base`}>{courseDescription}</p>
+              <div className="text-sm sm:text-md flex flex-wrap items-center gap-2">
                 <span className="text-yellow-25">{avgReviewCount}</span>
-                <RatingStars Review_Count={avgReviewCount} Star_Size={24} />
+                <RatingStars Review_Count={avgReviewCount} Star_Size={20} />
                 <span>{`(${ratingAndReviews.length} reviews)`}</span>
                 <span>{`${studentsEnrolled.length} students enrolled`}</span>
               </div>
               <div>
-                <p className="">
+                <p className="text-sm sm:text-base">
                   Created By {`${instructor.firstName} ${instructor.lastName}`}
                 </p>
               </div>
-              <div className="flex flex-wrap gap-5 text-lg">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-5 text-sm sm:text-lg">
                 <p className="flex items-center gap-2">
                   {" "}
                   <BiInfoCircle /> Created at {formatDate(createdAt)}
@@ -172,7 +172,7 @@ function CourseDetails() {
               </div>
             </div>
             <div className="flex w-full flex-col gap-4 border-y border-y-richblack-500 py-4 lg:hidden">
-              <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">
+              <p className="space-x-3 pb-4 text-2xl sm:text-3xl font-semibold text-richblack-5">
                 Rs. {price}
               </p>
               <button className="yellowButton" onClick={handleBuyCourse}>
@@ -182,7 +182,7 @@ function CourseDetails() {
             </div>
           </div>
           {/* Courses Card */}
-          <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block">
+          <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute lg:block">
             <CourseDetailsCard
               course={response?.data?.courseDetails}
               setConfirmationModal={setConfirmationModal}
@@ -194,19 +194,19 @@ function CourseDetails() {
       <div className="mx-auto box-content px-4 text-start text-richblack-5 lg:w-[1260px]">
         <div className="mx-auto max-w-maxContentTab lg:mx-0 xl:max-w-[810px]">
           {/* What will you learn section */}
-          <div className="my-8 border border-richblack-600 p-8">
-            <p className="text-3xl font-semibold">What you'll learn</p>
-            <div className="mt-5">
+          <div className="my-6 sm:my-8 border border-richblack-600 p-4 sm:p-6 md:p-8 rounded-lg">
+            <p className="text-xl sm:text-2xl md:text-3xl font-semibold">What you'll learn</p>
+            <div className="mt-3 sm:mt-5">
               <ReactMarkdown>{whatYouWillLearn}</ReactMarkdown>
             </div>
           </div>
 
           {/* Course Content Section */}
-          <div className="max-w-[830px] ">
+          <div className="max-w-[830px]">
             <div className="flex flex-col gap-3">
-              <p className="text-[28px] font-semibold">Course Content</p>
-              <div className="flex flex-wrap justify-between gap-2">
-                <div className="flex gap-2">
+              <p className="text-xl sm:text-2xl md:text-[28px] font-semibold">Course Content</p>
+              <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between gap-2 sm:gap-2">
+                <div className="flex flex-wrap gap-2 text-sm sm:text-base">
                   <span>
                     {courseContent.length} {`section(s)`}
                   </span>

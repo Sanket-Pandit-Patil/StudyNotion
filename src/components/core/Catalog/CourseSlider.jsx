@@ -12,24 +12,37 @@ const CourseSlider = ({ Courses }) => {
       {Courses?.length ? (
         <Swiper
           slidesPerView={1}
-          spaceBetween={25}
+          spaceBetween={20}
           loop={true}
           modules={[FreeMode, Pagination]} // ✅ Modules work now
           breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 25,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 25,
+            },
             1024: {
               slidesPerView: 3,
+              spaceBetween: 25,
+            },
+            1280: {
+              slidesPerView: 3,
+              spaceBetween: 30,
             },
           }}
-          className="max-h-[30rem]"
+          className="max-h-[30rem] px-4 sm:px-6"
         >
           {Courses?.map((course, i) => (
             <SwiperSlide key={i}>
-              <Course_Card course={course} Height={"h-[250px]"} />
+              <Course_Card course={course} Height={"h-[250px] sm:h-[280px]"} />
             </SwiperSlide>
           ))}
         </Swiper>
       ) : (
-        <p className="text-xl text-richblack-5">No Course Found</p>
+        <p className="text-lg sm:text-xl text-richblack-5 text-center px-4">No Course Found</p>
       )}
     </>
   );
